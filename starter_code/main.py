@@ -19,10 +19,9 @@ if __name__ == '__main__':
 
 	if args.mode == 'train':
 		x_train, y_train, x_test, y_test = load_data(args.data_dir)
-		exit()
 		x_train, y_train, x_valid, y_valid = train_valid_split(x_train, y_train)
-
 		model.train(x_train, y_train, training_configs, x_valid, y_valid)
+		#exit()
 		model.evaluate(x_test, y_test)
 
 	elif args.mode == 'test':
